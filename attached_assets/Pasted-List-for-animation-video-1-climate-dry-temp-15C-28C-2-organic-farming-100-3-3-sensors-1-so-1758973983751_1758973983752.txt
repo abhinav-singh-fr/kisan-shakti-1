@@ -1,0 +1,53 @@
+List for animation video 
+1) climate - dry temp 15C-28C
+2) organic farming -100% 3
+3) sensors 
+1) soil moisture and temp sensors (0–100% VWC) 
+purpose-Detects soil water content and temperature to automate irrigation scheduling and prevent
+overwatering (major cause of soil erosion in hills).
+Working Principle
+*measure dielectric premitivity of soil.
+
+2)Soil pH Sensor (Industrial Grade)
+*purpose-•Electrochemical sensor measures hydrogen ion concentration → outputs pH value.(pH 3 – 10)
+working priciple:
+* Electrochemical sensor measures hydrogen ion concentration → outputs pH value
+
+3)NPK Soil Nutrient Sensor (0–1999 mg/kg)
+purpose-Uses ion-selective electrodes or spectroscopy to detect nutrient ions.
+working priciple-Uses ion-selective electrodes or spectroscopy to detect nutrient ions
+
+4)Flow Sensor(1 – 60 L/min (customizable))
+*purpose-Prevents water wastage and ensures each terrace receives adequate water.
+*Critical for automated pump shut-off when there’s no water flow.
+working priciple-Turbine inside sensor rotates as water passes → generates pulse signal proportional to flow
+rate.
+
+5).Pressure Sensor(Range 0 – 6 bar)
+*purpose-Flow sensors alone can’t differentiate between low source water and pipe blockage
+*Ensures safe operation of pumps and valves
+
+6). Tipping Bucket Rain Gauge(Temp Range -40°C to +80°C)
+*purpose-Avoids over-irrigation during natural rainfall
+*Helps predict soil erosion risk on steep slopes.
+
+7)Temperature & Humidity Sensor (Range - Up to 20m)
+*purpose-Microclimate in hilly areas can vary terrace-to-terrace.
+*Helps in decision-making for crop health and irrigation frequency
+
+8). Ultrasonic Level Transmitter(Range - Up to 20m)
+purpose-*Farmers need to track tank storage to avoid overflow and wastage during heavy rains
+*Critical for optimizing irrigation during dry spells.
+*Automatically refill tanks or stop pumps to avoid overflow.
+working priciple-Sends ultrasonic pulse → measures time for echo return to calculate water level.
+4). APP (connected to app) 
+- loacal language, voice feature, automated irrigation, automated manure supply,soil health, offline features 
+5).water harvesting
+6). manure pit 
+* connected to app 
+7).electricity
+8).offline 
+9).normal range of nutrients and nutrients present in your soil 
+10). Send alert message about soil health and crops health and also alert message for weather
+why our app is best  
+ALL THESE ARE PROVIDED IN OFFLINE MODE … IT ALSO SAVES MONEY OF FARMERS( UNNECESSARY RECHAGING THEIR PHONE/INTERNET) ALSO EVERYTHING LIKE IRRIGATION TO PROVIDING MANURE (100% organic) TO SOIL EVERYTHING IS AUTOMATED ALSO VOICE IN LOCAL LANGUAGE AND LOCAL LANGUANGE IN APP
