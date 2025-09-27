@@ -13,8 +13,8 @@ export default function Navigation() {
   const [location] = useLocation();
 
   const navItems = [
-    { path: '/', icon: Home, label: 'Dashboard' },
-    { path: '/sensors/soil-moisture', icon: Activity, label: 'Sensors' },
+    { path: '/', icon: Home, label: 'Home' },
+    { path: '/dashboard', icon: BarChart3, label: 'Dashboard' },
     { path: '/irrigation', icon: Droplets, label: 'Irrigation' },
     { path: '/weather', icon: CloudRain, label: 'Weather' },
     { path: '/settings', icon: Settings, label: 'Settings' }
@@ -24,7 +24,7 @@ export default function Navigation() {
     <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border px-4 py-2 md:hidden" data-testid="nav-bottom">
       <div className="flex justify-around items-center max-w-md mx-auto">
         {navItems.map((item) => {
-          const isActive = location === item.path || (item.path === '/sensors/soil-moisture' && location.startsWith('/sensors'));
+          const isActive = location === item.path || (item.path === '/dashboard' && location.startsWith('/sensors'));
           const Icon = item.icon;
           
           return (

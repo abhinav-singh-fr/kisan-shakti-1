@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navigation from "@/components/Navigation";
+import Home from "@/pages/Home";
 import Dashboard from "@/pages/Dashboard";
 import SensorDetails from "@/pages/SensorDetails";
 import IrrigationManagement from "@/pages/IrrigationManagement";
@@ -15,7 +16,8 @@ function Router() {
   return (
     <div className="pb-16 md:pb-0">
       <Switch>
-        <Route path="/" component={Dashboard} />
+        <Route path="/" component={Home} />
+        <Route path="/dashboard" component={Dashboard} />
         <Route path="/sensors/:type" component={SensorDetails} />
         <Route path="/irrigation" component={IrrigationManagement} />
         <Route path="/weather" component={WeatherAlerts} />

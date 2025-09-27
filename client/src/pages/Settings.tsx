@@ -24,6 +24,7 @@ import {
   Database,
   Globe
 } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export default function Settings() {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
@@ -117,14 +118,144 @@ export default function Settings() {
         </div>
 
         {/* Settings Tabs */}
-        <Tabs defaultValue="general" className="space-y-4">
-          <TabsList className="grid w-full grid-cols-5">
+        <Tabs defaultValue="account" className="space-y-4">
+          <TabsList className="grid w-full grid-cols-6">
+            <TabsTrigger value="account" data-testid="tab-account">Account</TabsTrigger>
             <TabsTrigger value="general" data-testid="tab-general">General</TabsTrigger>
             <TabsTrigger value="notifications" data-testid="tab-notifications">Alerts</TabsTrigger>
             <TabsTrigger value="voice" data-testid="tab-voice">Voice</TabsTrigger>
             <TabsTrigger value="data" data-testid="tab-data">Data</TabsTrigger>
             <TabsTrigger value="system" data-testid="tab-system">System</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="account" className="space-y-4">
+            {/* Login & Account Management */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Shield className="h-5 w-5" />
+                  Account & Authentication
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="p-4 bg-muted rounded-md">
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      <p className="font-medium">Current Status</p>
+                      <p className="text-sm text-muted-foreground">Using app without account</p>
+                    </div>
+                    <Badge variant="secondary" data-testid="badge-account-status">Guest User</Badge>
+                  </div>
+                  
+                  <Alert className="mb-4">
+                    <Shield className="h-4 w-4" />
+                    <AlertDescription>
+                      Create an account to sync data across devices, access government schemes, and receive personalized recommendations.
+                    </AlertDescription>
+                  </Alert>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <Button className="w-full" data-testid="button-create-account">
+                      Create Account
+                    </Button>
+                    <Button variant="outline" className="w-full" data-testid="button-login-existing">
+                      Login to Existing Account
+                    </Button>
+                  </div>
+                </div>
+
+                <Separator />
+
+                <div className="space-y-4">
+                  <h4 className="font-medium">Account Information</h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="farmer-name">Farmer Name</Label>
+                      <Input 
+                        id="farmer-name" 
+                        placeholder="Enter your full name"
+                        data-testid="input-farmer-name"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="mobile">Mobile Number</Label>
+                      <Input 
+                        id="mobile" 
+                        type="tel" 
+                        placeholder="+91 9876543210"
+                        data-testid="input-mobile"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="aadhaar">Aadhaar Number (optional)</Label>
+                      <Input 
+                        id="aadhaar" 
+                        placeholder="1234 5678 9012"
+                        data-testid="input-aadhaar"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="kisan-id">Kisan Credit Card / Farmer ID</Label>
+                      <Input 
+                        id="kisan-id" 
+                        placeholder="Government issued ID"
+                        data-testid="input-kisan-id"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="address">Farm Address</Label>
+                    <Textarea 
+                      id="address" 
+                      placeholder="Village, District, State, PIN"
+                      data-testid="textarea-address"
+                    />
+                  </div>
+                </div>
+
+                <Separator />
+
+                <div className="space-y-4">
+                  <h4 className="font-medium">Security Settings</h4>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <Label htmlFor="two-factor">Two-Factor Authentication</Label>
+                      <p className="text-sm text-muted-foreground">
+                        Add extra security with SMS verification
+                      </p>
+                    </div>
+                    <Switch id="two-factor" data-testid="switch-2fa" />
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <Label htmlFor="fingerprint">Fingerprint Login</Label>
+                      <p className="text-sm text-muted-foreground">
+                        Quick access using biometric authentication
+                      </p>
+                    </div>
+                    <Switch id="fingerprint" data-testid="switch-fingerprint" />
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <Label htmlFor="auto-logout">Auto Logout</Label>
+                      <p className="text-sm text-muted-foreground">
+                        Automatically logout after 1 hour of inactivity
+                      </p>
+                    </div>
+                    <Switch id="auto-logout" defaultChecked data-testid="switch-auto-logout" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="general" className="space-y-4">
             <Card>
@@ -426,6 +557,72 @@ export default function Settings() {
           </TabsContent>
 
           <TabsContent value="system" className="space-y-4">
+            {/* Login & Account Section */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Shield className="h-5 w-5" />
+                  Login & Account
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="p-4 bg-muted rounded-md">
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      <p className="font-medium">Account Status</p>
+                      <p className="text-sm text-muted-foreground">Currently using as guest</p>
+                    </div>
+                    <Badge variant="secondary">Guest Mode</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Create an account to sync your data across devices and access premium features.
+                  </p>
+                  <div className="flex gap-2">
+                    <Button className="flex-1" data-testid="button-login">
+                      Login / Register
+                    </Button>
+                    <Button variant="outline" data-testid="button-continue-guest">
+                      Continue as Guest
+                    </Button>
+                  </div>
+                </div>
+
+                <Separator />
+
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number (for account creation)</Label>
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      placeholder="+91 9876543210"
+                      data-testid="input-phone"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="farmer-id">Farmer ID (optional)</Label>
+                    <Input 
+                      id="farmer-id" 
+                      placeholder="Government issued farmer ID"
+                      data-testid="input-farmer-id"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <Label htmlFor="biometric-login">Biometric Login</Label>
+                      <p className="text-sm text-muted-foreground">
+                        Use fingerprint or face recognition
+                      </p>
+                    </div>
+                    <Switch id="biometric-login" data-testid="switch-biometric" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* System Information */}
             <Card>
               <CardHeader>
                 <CardTitle>System Information</CardTitle>
@@ -456,6 +653,11 @@ export default function Settings() {
                   <Button variant="outline" className="w-full justify-start" data-testid="button-check-updates">
                     <Download className="h-4 w-4 mr-2" />
                     Check for Updates
+                  </Button>
+
+                  <Button variant="outline" className="w-full justify-start" data-testid="button-backup-settings">
+                    <Upload className="h-4 w-4 mr-2" />
+                    Backup Settings
                   </Button>
 
                   <Button variant="outline" className="w-full justify-start" data-testid="button-reset-settings">

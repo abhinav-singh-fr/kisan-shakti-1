@@ -86,6 +86,11 @@ export default function Header({
 
         {/* Navigation - Desktop */}
         <div className="hidden md:flex items-center gap-2">
+          <Link href="/dashboard">
+            <Button variant="ghost" size="sm" data-testid="nav-dashboard-desktop">
+              Dashboard
+            </Button>
+          </Link>
           <Link href="/irrigation">
             <Button variant="ghost" size="sm" data-testid="nav-irrigation-desktop">
               Irrigation
