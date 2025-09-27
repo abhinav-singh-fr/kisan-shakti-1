@@ -4,6 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Mic, MicOff, Wifi, WifiOff } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import logoUrl from '@assets/generated_images/Kishan_Shakti_agricultural_logo_9e5268e2.png';
+import { Link } from 'wouter';
 
 interface HeaderProps {
   isVoiceActive?: boolean;
@@ -39,22 +40,24 @@ export default function Header({
 
   return (
     <header className="bg-card border-b border-card-border px-4 py-3 flex items-center justify-between gap-4" data-testid="header-main">
-      <div className="flex items-center gap-3">
-        <img 
-          src={logoUrl} 
-          alt="Kishan Shakti Logo" 
-          className="h-10 w-10 rounded-md"
-          data-testid="img-logo"
-        />
-        <div>
-          <h1 className="text-xl font-bold text-foreground font-display" data-testid="text-app-name">
-            Kishan Shakti
-          </h1>
-          <p className="text-sm text-muted-foreground" data-testid="text-tagline">
-            Smart Farming Solutions
-          </p>
+      <Link href="/">
+        <div className="flex items-center gap-3 hover-elevate rounded-md p-2 -m-2">
+          <img 
+            src={logoUrl} 
+            alt="Kishan Shakti Logo" 
+            className="h-10 w-10 rounded-md"
+            data-testid="img-logo"
+          />
+          <div>
+            <h1 className="text-xl font-bold text-foreground font-display" data-testid="text-app-name">
+              Kishan Shakti
+            </h1>
+            <p className="text-sm text-muted-foreground" data-testid="text-tagline">
+              Smart Farming Solutions
+            </p>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className="flex items-center gap-3">
         {/* Online/Offline Status */}
@@ -80,6 +83,25 @@ export default function Header({
             ))}
           </SelectContent>
         </Select>
+
+        {/* Navigation - Desktop */}
+        <div className="hidden md:flex items-center gap-2">
+          <Link href="/irrigation">
+            <Button variant="ghost" size="sm" data-testid="nav-irrigation-desktop">
+              Irrigation
+            </Button>
+          </Link>
+          <Link href="/weather">
+            <Button variant="ghost" size="sm" data-testid="nav-weather-desktop">
+              Weather
+            </Button>
+          </Link>
+          <Link href="/settings">
+            <Button variant="ghost" size="sm" data-testid="nav-settings-desktop">
+              Settings
+            </Button>
+          </Link>
+        </div>
 
         {/* Voice Assistant */}
         <Button

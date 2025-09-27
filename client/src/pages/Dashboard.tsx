@@ -15,6 +15,7 @@ import {
   Waves 
 } from 'lucide-react';
 import heroImage from '@assets/generated_images/Terraced_farming_landscape_hero_10759361.png';
+import { Link } from 'wouter';
 
 export default function Dashboard() {
   const [isVoiceActive, setIsVoiceActive] = useState(false);
@@ -131,16 +132,17 @@ export default function Dashboard() {
         {/* Quick Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {sensorData.map((sensor, index) => (
-            <SensorCard
-              key={index}
-              title={sensor.title}
-              value={sensor.value}
-              unit={sensor.unit}
-              range={sensor.range}
-              icon={sensor.icon}
-              description={sensor.description}
-              isOnline={sensor.isOnline}
-            />
+            <Link key={index} href={`/sensors/${sensor.title.toLowerCase().replace(/\s+/g, '-')}`}>
+              <SensorCard
+                title={sensor.title}
+                value={sensor.value}
+                unit={sensor.unit}
+                range={sensor.range}
+                icon={sensor.icon}
+                description={sensor.description}
+                isOnline={sensor.isOnline}
+              />
+            </Link>
           ))}
         </div>
 
